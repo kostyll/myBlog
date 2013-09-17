@@ -1,0 +1,50 @@
+  499  pip install django-robokassa
+  500  sudo poweroff 
+  501  mc
+  502  ls
+  503  workon myBlog
+  504  git push master
+  505  git push master
+  506  git confif push.default matching
+  507  git config  push.default matching
+  508  git config --global push.default  simple
+  509  git push master
+  510  git push simple
+  511  cat ~/.ssh/id_rsa.pub 
+  512  ssh-key -t rsa -C "andrew.freelance@i.ua"
+  513  ssh-keygen -t rsa -C "andrew.freelance@i.ua"
+  514  cat ~/.ssh/id_rsa.pub 
+  515  cat ~/.ssh/id_rsa.pub 
+  516  cat ~/.ssh/id_rsa.pub 
+  517  gedit ~/.ssh/id_rsa.pub 
+  518  sudo apt-get install xclip
+  519  xclip -sel clip < ~/.ssh/id_rsa.pub 
+  520  git -T git@github.com
+  521  ssh -T git@github.com
+  522  git log
+  523  git push git@github.com:kostyll/myBlog.git HEAD
+  524  ls
+  525  git push origin master
+  526  git push git@github.com:kostyll/myBlog.git master
+  527  git pull  Updates were rejected because the tip of your current branch is behind
+  528  git pullgit@github.com:kostyll/myBlog.git master
+  529  git pull git@github.com:kostyll/myBlog.git master
+  530  ls
+  531  cat README.md 
+  532  git log
+  533  git push git@github.com:kostyll/myBlog.git master
+  534  ls
+  535  echo git push git@github.com:kostyll/myBlog.git master
+  536  echo git push git@github.com:kostyll/myBlog.git master>push.cmd
+  537  chmod +x push.cmd 
+  538  ls
+  539  git add push.cmd
+  540  git log
+  541  git list
+  542  git rev-list
+  543  ls
+  544  history 
+  545  history | tail -30
+  546  history | tail -40
+  547  history | tail -50
+  548  history | tail -50 >history.hst
