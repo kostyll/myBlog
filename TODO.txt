@@ -1,0 +1,30 @@
+1. install virtualenv virtualenvwrapper virtualenvwrapper.project
+ - for example $pip install virtualenv virtualenvwrapper virtualenvwrapper.project
+2. make project with mkvirtualenv
+	- mkvirtualenv <envname>
+	- workon <envname> | cdproject| cdvirtualenv | deactivate
+3. install required python-libraries : {simplejson, django, django-tinymce, django-ckeditor, django_extensions....}
+4. make new project:
+	django-admin.py startproject | startapp .....
+5. make useful tools :
+	./manage.py runfcgi host=127.0.0.1 port=8080 debug=True --verbosity=3
+	ps aux |grep "[p]ython ./manage.py runfcgi" |grep -E "^([a-z0-9]{1,}[^0-9]+)([0-9]+)" -o |grep -E "[0-9]+$" -o |head -n 1 > kill.pid
+	kill -KILL `cat kill.pid`
+	echo>kill.pid 
+	ps aux | grep "[p]ython ./manage.py runfcgi"
+	git push git@github.com:kostyll/myBlog.git master
+6. make ./manage.py collectstatic
+7. make git repo at the github.com
+	git pull git@github.com:kostyll/myBlog.git master
+	git push git@github.com:kostyll/myBlog.git master
+	The algo is the next:
+		- git init <dir>
+		- git add <files>
+		- git commit -am "Comment"
+		- git pull git@github.com:<user>/<repo>.git <master{branch}>
+			- make some changes in your code
+			- git commit ...
+			- git push ....
+
+THE tasks in blog:
+1. 
