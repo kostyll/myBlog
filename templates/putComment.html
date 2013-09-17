@@ -2,7 +2,7 @@
 {% block content %}
 	{{ form.media }}
 	<form action="/comment/{{redirect}}/" method="POST">{% csrf_token %}
-	{{ form.as_p}}
+	{{ form.as_table}}
 	<input type="hidden" value="{{redirect}}">
 	<input type="submit" value="Прокоментировать">
 	</form>
