@@ -1,5 +1,5 @@
 1. install virtualenv virtualenvwrapper virtualenvwrapper.project
- - for example $pip install virtualenv virtualenvwrapper virtualenvwrapper.project
+ - for example $pip install virtualenv virtualenvwrapper virtualenvwrapper.project - {to install pip use git clone http://github.com/p.....}
 2. make project with mkvirtualenv
 	- mkvirtualenv <envname>
 	- workon <envname> | cdproject| cdvirtualenv | deactivate
