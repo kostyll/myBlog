@@ -1,0 +1,16 @@
+{% extends "index.html" %}
+{% block content %}
+	{% if post %}
+		<h1>{{ post.title }}</h1>
+		<p>{{ post.body }}</p>
+		<p>{{ post.date|date:"l, F jS" }}</p>
+		{% if comments %}
+			{% for comment in comments %}
+				<hr>
+				<p>{{ comment.comment }}</p>
+				<p>{{ comment.date|date:"l, F jS" }}</p>
+			{% endfor %}
+		{% endif %}
+		<p><a href="/comment/{{ post.id }}/">Прокоментировать</a></p>
+	{% endif %}
+{% endblock %}

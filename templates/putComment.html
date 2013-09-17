@@ -1,0 +1,9 @@
+{% extends "index.html" %}
+{% block content %}
+	{{ form.media }}
+	<form action="/comment/{{redirect}}/" method="POST">{% csrf_token %}
+	{{ form.as_p}}
+	<input type="hidden" value="{{redirect}}">
+	<input type="submit" value="Прокоментировать">
+	</form>
+{% endblock %}
