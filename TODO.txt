@@ -27,7 +27,9 @@
 			- git push ....
 
 THE tasks in blog:
+0. Добавить авторизацию в блог + на выводе коментов ссылку на автора.
 1. Make|DownLoad-Edit good design - template
 2. Add several flatpages {Про, Контакты{google-maps}, |Блог|, Сервисы }
 3. Add ability of django-social-auth
 4. add ability of using social-rank-systems (likes in vk,fb,tw)
+
