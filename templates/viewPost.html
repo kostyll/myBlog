@@ -4,6 +4,8 @@
 		<h1>{{ post.title }}</h1>
 		<p>{{ post.body }}</p>
 		<p>{{ post.date|date:"l, F jS" }}</p>
+		<div class="share42init"></div>
+		<script type="text/javascript" src="/media/share42/share42.js"></script>
 		{% if comments %}
 			{% for comment in comments %}
 				<hr>

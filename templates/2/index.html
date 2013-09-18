@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>mlpDesign03</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="/media/1/mlpd3sign.css" type="text/css" />
+</head>
+<body>
+<div id="main">
+  <div id="header">
+    <h1>Блог программиста Python</h1>
+  </div>
+  <div id="sidebar">
+    <h1>Навигация</h1>
+    <ul>
+      { %block links% }
+      { % endblock % }
+    </ul>
+    <h2>Услуги</h2>
+    {% block services %}
+    {% endblock %}
+  </div>
+  <div id="content">
+    {% if not flatpage %}
+      { %block  content % }
+        {% for post in posts %}
+          <h1>{{ post.date|date:"l, F jS" }} </h1>
+          <p>{{ post.title }}
+          <p>{{ post.body|truncatewords_html:"10" }} ...
+          <p><a href="/post/{{ post.id }}/">Читать дальше...</a></p>
+        {% endfor %}  
+      { %endblock % }
+    {% else %}
+      {{ flatpage.content }}
+    {% endif %}
+  </div>
+  <div class="spacer"></div>
+  <div id="footer">2007 &copy; Copyright Your Name. All Rights Reserved. <br />
+    Template Design by <a rel="nofollow" target="_blank" href="http://www.mlpDesign.net">MLP Design</a> | <a rel="nofollow" target="_blank" href="http://validator.w3.org/check?uri=referer">XHTML 1.0</a> | <a rel="nofollow" target="_blank" href="http://jigsaw.w3.org/css-validator/check/referer/">CSS 2.0</a> </div>
+</div>
+</body>
+</html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>mlpDesign03</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="/media/1/mlpd3sign.css" type="text/css" />
+</head>
+<body>
+<div id="main">
+  <div id="header">
+    <h1>Блог программиста Python</h1>
+  </div>
+  <div id="sidebar">
+    <h1>Навигация</h1>
+    <ul>
+      { %block links% }
+      { % endblock % }
+    </ul>
+    <h2>Услуги</h2>
+    {% block services %}
+    {% endblock %}
+  </div>
+  <div id="content">
+    {% if not flatpage %}
+      { %block  content % }
+        {% for post in posts %}
+          <h1>{{ post.date|date:"l, F jS" }} </h1>
+          <p>{{ post.title }}
+          <p>{{ post.body|truncatewords_html:"10" }} ...
+          <p><a href="/post/{{ post.id }}/">Читать дальше...</a></p>
+        {% endfor %}  
+      { %endblock % }
+    {% else %}
+      {{ flatpage.content }}
+    {% endif %}
+  </div>
+  <div class="spacer"></div>
+  <div id="footer">2007 &copy; Copyright Your Name. All Rights Reserved. <br />
+    Template Design by <a rel="nofollow" target="_blank" href="http://www.mlpDesign.net">MLP Design</a> | <a rel="nofollow" target="_blank" href="http://validator.w3.org/check?uri=referer">XHTML 1.0</a> | <a rel="nofollow" target="_blank" href="http://jigsaw.w3.org/css-validator/check/referer/">CSS 2.0</a> </div>
+</div>
+</body>
+</html>
