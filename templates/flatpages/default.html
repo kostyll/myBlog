@@ -27,13 +27,11 @@
   </div>
   <div class="clear">&nbsp;</div>
   <div id="sidebar">
-    <h2>Здравстуйте, 
+    Здравстуйте, 
     {% if user.is_autorized %}
       {{user.name}}
-    </h2>
     {% else %} 
       пользователь
-    </h2>
     {% endif %}
 
     <h2><a href="/">Архив постов</a></h2>
