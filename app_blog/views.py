@@ -6,12 +6,15 @@ from django.http import HttpResponse, HttpResponseRedirect
 from app_blog.models import blogPost, postComment
 from app_blog.forms import commentPost
 from django.template.defaulttags import autoescape
-from django.shortcuts import render
+from django.shortcuts import render, render_to_response
 from datetime import date 
 
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.views import logout, login
+
+from django.contrib.auth import login as auth_login
+from django.template import RequestContext
 
 today = date.today()
 
@@ -24,8 +27,10 @@ def prepareContext(request, context=None):
 def viewYearPosts(request, year = today.year):
 	posts = blogPost.objects.filter(date__year = year)
 	pageTemplate = loader.get_template("index.html")
-	pageContext = Context(prepareContext(request,{'posts':posts, }),autoescape=False)
-	return HttpResponse(pageTemplate.render(pageContext)) 	
+	pageContext = prepareContext(request,{'posts':posts, })
+	return render_to_response("index.html",pageContext,
+		context_instance=RequestContext(request))
+	#return HttpResponse(pageTemplate.render(pageContext)) 	
 
 def viewPost(request, post=0):
 	content = blogPost.objects.get(id=post)
@@ -58,8 +63,22 @@ def viewLogout(request):
 	return HttpResponseRedirect('/')
 
 def viewLogin(request):
-	return login(request,template_name="login.html",redirect_field_name='/')
-	#return HttpResponseRedirect('/')
+	username = password = ''
+	if request.POST :
+		form = AuthenticationForm(request,data=request.POST)
+		if form.is_valid():
+			auth_login(request,form.get_user())
+			return HttpResponseRedirect('/')
+		else:
+			form = AuthenticationForm(request)
+			context = {
+		        'form': form,
+		        redirect_field_name: redirect_to,
+		        'site': current_site,
+		        'site_name': current_site.name,
+		    }
+			return TemplateResponse(request, "login.html", RequestContext(context),
+		                           )
 
 def registerAgree(request):
 	pass

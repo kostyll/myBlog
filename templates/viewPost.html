@@ -7,8 +7,10 @@
 		{% if comments %}
 			{% for comment in comments %}
 				<hr>
-				<p>{{ comment.comment }}</p>
-				<p>{{ comment.date|date:"l, F jS" }}</p>
+				{% autoescape off %}
+					<p>{{ comment.comment }}</p>
+				{% endautoescape %}
+				<p>Написал {{comment.author.first_name}} : {{ comment.date|date:"l, F jS" }}</p>
 			{% endfor %}
 		{% endif %}
 		{% if user.is_authenticated %}

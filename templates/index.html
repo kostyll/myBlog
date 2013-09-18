@@ -21,11 +21,11 @@
   </div>
   <div class="clear">&nbsp;</div>
   <div id="sidebar">
-    <h2>Здравстуйте, 
+    Здравстуйте,  
     {% if user.is_authenticated %}
       {{user.first_name}}<br>
       <a href="/logout/">Выйти</a>
-    </h2>
+   
     {% else %} 
       гость<br>
       {% if authForm %}
@@ -35,7 +35,7 @@
         </form> 
       {% endif %}
       <a href="/register/">Реестрация</a>
-    </h2>
+
     {% endif %}
 
     <h2><a href="/">Архив постов</a></h2>
@@ -57,7 +57,9 @@
       {% for post in posts %}
         <h1>{{ post.date|date:"l, F jS" }} </h1>
         <p>{{ post.title }}
-        <p>{{ post.body|truncatewords_html:"10" }} ...
+        {% autoescape off %}
+          <p>{{ post.body|truncatewords_html:"10" }} ...
+        {% endautoescape %}
         <p><a href="/post/{{ post.id }}/">Читать дальше...</a></p>
       {% endfor %}  
     {% endblock %}

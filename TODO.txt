@@ -27,13 +27,13 @@
 			- git push ....
 
 THE tasks in blog:
-0. Добавить авторизацию в блог + на выводе коментов ссылку на автора.
-1. Make|DownLoad-Edit good design - template
-2. Add several flatpages {Про, Контакты{google-maps}, |Блог|, Сервисы }
+0. Добавить авторизацию в блог + на выводе коментов ссылку на автора.+
+1. Make|DownLoad-Edit good design - template+
+2. Add several flatpages {Про, Контакты{google-maps}, |Блог|, Сервисы }+
 3. Add ability of django-social-auth
 4. add ability of using social-rank-systems (likes in vk,fb,tw)
 5. Добавить возможность кеширования и сжатия 
 	-http://habrahabr.ru/post/142241/
 6. Добавить возможность проведения платежей Privat24, LiqPay, Robokassa
 	- http://www.roboxchange.com/
-
+7. добавить регистрацию

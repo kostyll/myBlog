@@ -1,7 +1,13 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>Блог программиста Python</title>
+<title>
+	{% if flatpage.title %}
+		{{ flatpage.title }}
+	{% else %}
+		Блог программиста Python
+	{% endif %}
+</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="/media/2/style.css" rel="stylesheet" type="text/css" />
 </head>
@@ -45,7 +51,9 @@
     <p><!-- another static block --></p>
   </div>
   <div id="content">
-    {{ flatpage.content }}
+	{% autoescape off %}
+   		{{ flatpage.content }}
+   	{% endautoescape %}
   </div>
   <div class="clear">&nbsp;</div>
   <div id="footer"> <a href="http://web-mastery.info/">Homepage</a> | <a href="http://web-mastery.info/">contact</a> | <a href="http://validator.w3.org/check?uri=referer">html</a> | <a href="http://jigsaw.w3.org/css-validator">css</a> | &copy; 2007 Anyone | Design by <a href="http://www.mitchinson.net"> www.mitchinson.net</a> | This work is licensed under a <a rel="license" target="_blank" href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License</a> </div>

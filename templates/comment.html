@@ -2,7 +2,9 @@
 {% block content %}
 	{% if post %}
 		<h1>{{ post.title }}</h1>
-		<p>{{ post.body}}</p>
+		{% autoescape off %}
+			<p>{{ post.body}}</p>
+		{% endautoescape %}
 		<p>{{ post.date|date:"l, F jS" }}</p>
 		<p><a href="/comment/{{ post.id }}/">Прокоментировать</a></p>
 	{% endif %}

@@ -4,6 +4,38 @@
 		"selected_items":
 		[
 			[
+				"ren",
+				"render_to_response	import"
+			],
+			[
+				"log",
+				"login	function"
+			],
+			[
+				"HttpR",
+				"HttpResponseRedirect"
+			],
+			[
+				"HttpRes",
+				"HttpResponseRedirect	import"
+			],
+			[
+				"aut",
+				"authenticate"
+			],
+			[
+				"Htt",
+				"HttpResponseRedirect	import"
+			],
+			[
+				"nex",
+				"next_page	param"
+			],
+			[
+				"login",
+				"login_required	function"
+			],
+			[
 				"app",
 				"app_blog	import"
 			],
@@ -40,10 +72,34 @@
 	"buffers":
 	[
 		{
+			"file": "TODO.txt",
+			"settings":
+			{
+				"buffer_size": 1771,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "templates/index.html",
+			"settings":
+			{
+				"buffer_size": 2497,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "media/2/style.css",
+			"settings":
+			{
+				"buffer_size": 3055,
+				"line_ending": "Windows"
+			}
+		},
+		{
 			"file": "blog/settings.py",
 			"settings":
 			{
-				"buffer_size": 6278,
+				"buffer_size": 6380,
 				"line_ending": "Unix"
 			}
 		},
@@ -51,7 +107,15 @@
 			"file": "blog/urls.py",
 			"settings":
 			{
-				"buffer_size": 1057,
+				"buffer_size": 1218,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "templates/flatpages/default.html",
+			"settings":
+			{
+				"buffer_size": 1945,
 				"line_ending": "Unix"
 			}
 		},
@@ -64,10 +128,26 @@
 			}
 		},
 		{
+			"file": "templates/viewPost.html",
+			"settings":
+			{
+				"buffer_size": 592,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "templates/putComment.html",
+			"settings":
+			{
+				"buffer_size": 270,
+				"line_ending": "Unix"
+			}
+		},
+		{
 			"file": "app_blog/forms.py",
 			"settings":
 			{
-				"buffer_size": 295,
+				"buffer_size": 302,
 				"line_ending": "Unix"
 			}
 		},
@@ -75,48 +155,101 @@
 			"file": "app_blog/admin.py",
 			"settings":
 			{
-				"buffer_size": 860,
+				"buffer_size": 1627,
 				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "templates/index.html",
-			"settings":
-			{
-				"buffer_size": 1185,
-				"line_ending": "Unix",
-				"name": "<"
-			}
-		},
-		{
-			"file": "media/2/styles.css",
-			"settings":
-			{
-				"buffer_size": 0,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "templates/main.html",
-			"settings":
-			{
-				"buffer_size": 1605,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "media/1/mlpd3sign.css",
-			"settings":
-			{
-				"buffer_size": 3682,
-				"line_ending": "Windows"
 			}
 		},
 		{
 			"file": "app_blog/views.py",
 			"settings":
 			{
-				"buffer_size": 1617,
+				"buffer_size": 2767,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "django/django/shortcuts/__init__.py",
+			"settings":
+			{
+				"buffer_size": 5470,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "django/django/template/loader.py",
+			"settings":
+			{
+				"buffer_size": 7569,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "django/django/template/base.py",
+			"settings":
+			{
+				"buffer_size": 49901,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "django/django/template/__init__.py",
+			"settings":
+			{
+				"buffer_size": 3247,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "django/django/contrib/auth/__init__.py",
+			"settings":
+			{
+				"buffer_size": 5271,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "{% extends \"../index.html\" %}\n{% block content %}\n{% endblock %}",
+			"file": "templates/registration/login.html",
+			"file_size": 64,
+			"file_write_time": 130239726633506352,
+			"settings":
+			{
+				"buffer_size": 64,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "templates/login.html",
+			"settings":
+			{
+				"buffer_size": 61,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "django/django/contrib/auth/decorators.py",
+			"settings":
+			{
+				"buffer_size": 3160,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "from django.conf import settings\nfrom django.core.urlresolvers import reverse\nfrom django.http import HttpResponseRedirect, QueryDict\nfrom django.template.response import TemplateResponse\nfrom django.utils.http import is_safe_url, urlsafe_base64_decode\nfrom django.utils.translation import ugettext as _\nfrom django.utils.six.moves.urllib.parse import urlparse, urlunparse\nfrom django.shortcuts import resolve_url\nfrom django.views.decorators.debug import sensitive_post_parameters\nfrom django.views.decorators.cache imp ort never_cache\nfrom django.views.decorators.csrf import csrf_protect\n\n# Avoid shadowing the login() and logout() views below.\nfrom django.contrib.auth import REDIRECT_FIELD_NAME, login as auth_login, logout as auth_logout, get_user_model\nfrom django.contrib.auth.decorators import login_required\nfrom django.contrib.auth.forms import AuthenticationForm, PasswordResetForm, SetPasswordForm, PasswordChangeForm\nfrom django.contrib.auth.tokens import default_token_generator\nfrom django.contrib.sites.models import get_current_site\n\n\n@sensitive_post_parameters()\n@csrf_protect\n@never_cache\ndef login(request, template_name='registration/login.html',\n          redirect_field_name=REDIRECT_FIELD_NAME,\n          authentication_form=AuthenticationForm,\n          current_app=None, extra_context=None):\n    \"\"\"\n    Displays the login form and handles the login action.\n    \"\"\"\n    redirect_to = request.REQUEST.get(redirect_field_name, '')\n\n    if request.method == \"POST\":\n        form = authentication_form(request, data=request.POST)\n        if form.is_valid():\n\n            # Ensure the user-originating redirection url is safe.\n            if not is_safe_url(url=redirect_to, host=request.get_host()):\n                redirect_to = resolve_url(settings.LOGIN_REDIRECT_URL)\n\n            # Okay, security check complete. Log the user in.\n            auth_login(request, form.get_user())\n\n            return HttpResponseRedirect(redirect_to)\n    else:\n        form = authentication_form(request)\n\n    current_site = get_current_site(request)\n\n    context = {\n        'form': form,\n        redirect_field_name: redirect_to,\n        'site': current_site,\n        'site_name': current_site.name,\n    }\n    if extra_context is not None:\n        context.update(extra_context)\n    return TemplateResponse(request, template_name, context,\n                            current_app=current_app)\n\n\ndef logout(request, next_page=None,\n           template_name='registration/logged_out.html',\n           redirect_field_name=REDIRECT_FIELD_NAME,\n           current_app=None, extra_context=None):\n    \"\"\"\n    Logs out the user and displays 'You are logged out' message.\n    \"\"\"\n    auth_logout(request)\n\n    if next_page is not None:\n        next_page = resolve_url(next_page)\n\n    if redirect_field_name in request.REQUEST:\n        next_page = request.REQUEST[redirect_field_name]\n        # Security check -- don't allow redirection to a different host.\n        if not is_safe_url(url=next_page, host=request.get_host()):\n            next_page = request.path\n\n    if next_page:\n        # Redirect to this page until the session has been cleared.\n        return HttpResponseRedirect(next_page)\n\n    current_site = get_current_site(request)\n    context = {\n        'site': current_site,\n        'site_name': current_site.name,\n        'title': _('Logged out')\n    }\n    if extra_context is not None:\n        context.update(extra_context)\n    return TemplateResponse(request, template_name, context,\n        current_app=current_app)\n\n\ndef logout_then_login(request, login_url=None, current_app=None, extra_context=None):\n    \"\"\"\n    Logs out the user if he is logged in. Then redirects to the log-in page.\n    \"\"\"\n    if not login_url:\n        login_url = settings.LOGIN_URL\n    login_url = resolve_url(login_url)\n    return logout(request, login_url, current_app=current_app, extra_context=extra_context)\n\n\ndef redirect_to_login(next, login_url=None,\n                      redirect_field_name=REDIRECT_FIELD_NAME):\n    \"\"\"\n    Redirects the user to the login page, passing the given 'next' page\n    \"\"\"\n    resolved_url = resolve_url(login_url or settings.LOGIN_URL)\n\n    login_url_parts = list(urlparse(resolved_url))\n    if redirect_field_name:\n        querystring = QueryDict(login_url_parts[4], mutable=True)\n        querystring[redirect_field_name] = next\n        login_url_parts[4] = querystring.urlencode(safe='/')\n\n    return HttpResponseRedirect(urlunparse(login_url_parts))\n\n\n# 4 views for password reset:\n# - password_reset sends the mail\n# - password_reset_done shows a success message for the above\n# - password_reset_confirm checks the link the user clicked and\n#   prompts for a new password\n# - password_reset_complete shows a success message for the above\n\n@csrf_protect\ndef password_reset(request, is_admin_site=False,\n                   template_name='registration/password_reset_form.html',\n                   email_template_name='registration/password_reset_email.html',\n                   subject_template_name='registration/password_reset_subject.txt',\n                   password_reset_form=PasswordResetForm,\n                   token_generator=default_token_generator,\n                   post_reset_redirect=None,\n                   from_email=None,\n                   current_app=None,\n                   extra_context=None,\n                   html_email_template_name=None):\n    if post_reset_redirect is None:\n        post_reset_redirect = reverse('password_reset_done')\n    else:\n        post_reset_redirect = resolve_url(post_reset_redirect)\n    if request.method == \"POST\":\n        form = password_reset_form(request.POST)\n        if form.is_valid():\n            opts = {\n                'use_https': request.is_secure(),\n                'token_generator': token_generator,\n                'from_email': from_email,\n                'email_template_name': email_template_name,\n                'subject_template_name': subject_template_name,\n                'request': request,\n                'html_email_template_name': html_email_template_name,\n            }\n            if is_admin_site:\n                opts = dict(opts, domain_override=request.get_host())\n            form.save(**opts)\n            return HttpResponseRedirect(post_reset_redirect)\n    else:\n        form = password_reset_form()\n    context = {\n        'form': form,\n        'title': _('Password reset'),\n    }\n    if extra_context is not None:\n        context.update(extra_context)\n    return TemplateResponse(request, template_name, context,\n                            current_app=current_app)\n\n\ndef password_reset_done(request,\n                        template_name='registration/password_reset_done.html',\n                        current_app=None, extra_context=None):\n    context = {\n        'title': _('Password reset successful'),\n    }\n    if extra_context is not None:\n        context.update(extra_context)\n    return TemplateResponse(request, template_name, context,\n                            current_app=current_app)\n\n\n# Doesn't need csrf_protect since no-one can guess the URL\n@sensitive_post_parameters()\n@never_cache\ndef password_reset_confirm(request, uidb64=None, token=None,\n                           template_name='registration/password_reset_confirm.html',\n                           token_generator=default_token_generator,\n                           set_password_form=SetPasswordForm,\n                           post_reset_redirect=None,\n                           current_app=None, extra_context=None):\n    \"\"\"\n    View that checks the hash in a password reset link and presents a\n    form for entering a new password.\n    \"\"\"\n    UserModel = get_user_model()\n    assert uidb64 is not None and token is not None  # checked by URLconf\n    if post_reset_redirect is None:\n        post_reset_redirect = reverse('password_reset_complete')\n    else:\n        post_reset_redirect = resolve_url(post_reset_redirect)\n    try:\n        uid = urlsafe_base64_decode(uidb64)\n        user = UserModel._default_manager.get(pk=uid)\n    except (TypeError, ValueError, OverflowError, UserModel.DoesNotExist):\n        user = None\n\n    if user is not None and token_generator.check_token(user, token):\n        validlink = True\n        title = _('Enter new password')\n        if request.method == 'POST':\n            form = set_password_form(user, request.POST)\n            if form.is_valid():\n                form.save()\n                return HttpResponseRedirect(post_reset_redirect)\n        else:\n            form = set_password_form(None)\n    else:\n        validlink = False\n        form = None\n        title = _('Password reset unsuccessful')\n    context = {\n        'form': form,\n        'title': title,\n        'validlink': validlink,\n    }\n    if extra_context is not None:\n        context.update(extra_context)\n    return TemplateResponse(request, template_name, context,\n                            current_app=current_app)\n\ndef password_reset_complete(request,\n                            template_name='registration/password_reset_complete.html',\n                            current_app=None, extra_context=None):\n    context = {\n        'login_url': resolve_url(settings.LOGIN_URL),\n        'title': _('Password reset complete'),\n    }\n    if extra_context is not None:\n        context.update(extra_context)\n    return TemplateResponse(request, template_name, context,\n                            current_app=current_app)\n\n\n@sensitive_post_parameters()\n@csrf_protect\n@login_required\ndef password_change(request,\n                    template_name='registration/password_change_form.html',\n                    post_change_redirect=None,\n                    password_change_form=PasswordChangeForm,\n                    current_app=None, extra_context=None):\n    if post_change_redirect is None:\n        post_change_redirect = reverse('password_change_done')\n    else:\n        post_change_redirect = resolve_url(post_change_redirect)\n    if request.method == \"POST\":\n        form = password_change_form(user=request.user, data=request.POST)\n        if form.is_valid():\n            form.save()\n            return HttpResponseRedirect(post_change_redirect)\n    else:\n        form = password_change_form(user=request.user)\n    context = {\n        'form': form,\n        'title': _('Password change'),\n    }\n    if extra_context is not None:\n        context.update(extra_context)\n    return TemplateResponse(request, template_name, context,\n                            current_app=current_app)\n\n\n@login_required\ndef password_change_done(request,\n                         template_name='registration/password_change_done.html',\n                         current_app=None, extra_context=None):\n    context = {\n        'title': _('Password change successful'),\n    }\n    if extra_context is not None:\n        context.update(extra_context)\n    return TemplateResponse(request, template_name, context,\n                            current_app=current_app)\n",
+			"file": "django/django/contrib/auth/views.py",
+			"file_size": 10959,
+			"file_write_time": 130238713129465172,
+			"settings":
+			{
+				"buffer_size": 10960,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "django/django/contrib/auth/forms.py",
+			"settings":
+			{
+				"buffer_size": 14774,
 				"line_ending": "Unix"
 			}
 		}
@@ -124,9 +257,25 @@
 	"build_system": "Packages/User/django-test.sublime-build",
 	"command_palette":
 	{
-		"height": 117.0,
+		"height": 392.0,
 		"selected_items":
 		[
+			[
+				"Package Control: install",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: add re",
+				"Package Control: Add Repository"
+			],
+			[
+				"",
+				"Build: Build"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
 			[
 				"insta",
 				"Package Control: Install Package"
@@ -147,6 +296,11 @@
 		"height": 198.0,
 		"history":
 		[
+			"print (os.path)",
+			"print os.path",
+			"import os",
+			"help(sublime)",
+			"import sublime",
 			"curl -v -u kostyll -X POST https://api.github.com/authorizations --data \"{\\\"scopes\\\":[\\\"gist\\\"]}\"",
 			"curl -v -u USERNAME -X POST https://api.github.com/authorizations --data \"{\\\"scopes\\\":[\\\"gist\\\"]}\"",
 			"terminal",
@@ -172,18 +326,27 @@
 	},
 	"file_history":
 	[
+		"/home/andrew/workspace/myBlog/templates/1/index.html",
+		"/home/andrew/workspace/myBlog/templates/2/index.html",
+		"/home/andrew/workspace/myBlog/templates/main.html",
+		"/home/andrew/workspace/myBlog/templates/flatpages/default.html",
+		"/home/andrew/workspace/myBlog/templates/index.html",
+		"/home/andrew/workspace/myBlog/templates/2/style.css",
+		"/home/andrew/workspace/myBlog/templates/putComment.html",
+		"/home/andrew/workspace/myBlog/media/1/mlpd3sign.css",
+		"/home/andrew/workspace/myBlog/media/2/styles.css",
+		"/home/andrew/.config/sublime-text-3/Packages/ASCII Decorator/ASCII Decorator.sublime-settings",
+		"/home/andrew/.config/sublime-text-3/Packages/User/ASCII Decorator.sublime-settings",
+		"/home/andrew/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap",
+		"/home/andrew/.config/sublime-text-3/Packages/ASCII Decorator/Default (Linux).sublime-keymap",
+		"/home/andrew/.config/sublime-text-3/Packages/Default/Preferences.sublime-settings",
 		"/home/andrew/.config/sublime-text-3/Packages/Package Control/Package Control.sublime-settings",
 		"/home/andrew/.config/sublime-text-3/Packages/User/Package Control.sublime-settings",
-		"/home/andrew/workspace/myBlog/templates/main.html",
 		"/home/andrew/workspace/myBlog/templates/comment.html",
-		"/home/andrew/workspace/myBlog/templates/putComment.html",
 		"/home/andrew/workspace/myBlog/templates/viewPost.html",
 		"/home/andrew/workspace/myBlog/templates/1/mlpd3sign.css",
 		"/home/andrew/workspace/myBlog/widgets.py",
 		"/home/andrew/.config/sublime-text-3/Packages/User/Gist.sublime-settings",
-		"/home/andrew/workspace/myBlog/templates/index.html",
-		"/home/andrew/workspace/myBlog/templates/1/index.html",
-		"/home/andrew/.config/sublime-text-3/Packages/Default/Preferences.sublime-settings",
 		"/home/andrew/.config/sublime-text-3/Packages/sublime-github/GitHub.sublime-settings",
 		"/home/andrew/.config/sublime-text-3/Packages/SublimeGit/SublimeGit.sublime-settings",
 		"/home/andrew/.config/sublime-text-3/Packages/SublimeGit/Default (Linux).sublime-keymap",
@@ -200,7 +363,6 @@
 		"/home/andrew/workspace/Blog/blog/app_blog/models.py",
 		"/home/andrew/.config/sublime-text-3/Packages/SublimeREPL/SublimeREPL.sublime-settings",
 		"/home/andrew/.config/sublime-text-3/Packages/User/SublimeREPL.sublime-settings",
-		"/home/andrew/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap",
 		"/home/andrew/.config/sublime-text-3/Packages/User/django-test.sublime-build"
 	],
 	"find":
@@ -237,24 +399,108 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 14,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "blog/settings.py",
+					"file": "TODO.txt",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 6278,
+						"buffer_size": 1771,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								5826,
-								5826
+								1769,
+								1769
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 204.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "templates/index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2497,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								538,
+								538
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "media/2/style.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3055,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1527,
+								1527
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1224.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "blog/settings.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6380,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3775,
+								3775
 							]
 						],
 						"settings":
@@ -264,26 +510,26 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 2406.0,
+						"translation.y": 1233.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 1,
+					"buffer": 4,
 					"file": "blog/urls.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1057,
+						"buffer_size": 1218,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								972,
-								972
+								688,
+								688
 							]
 						],
 						"settings":
@@ -299,7 +545,34 @@
 					"type": "text"
 				},
 				{
-					"buffer": 2,
+					"buffer": 5,
+					"file": "templates/flatpages/default.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1945,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1284,
+								1284
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
 					"file": "app_blog/models.py",
 					"semi_transient": false,
 					"settings":
@@ -320,8 +593,8 @@
 						"selection":
 						[
 							[
-								955,
-								955
+								696,
+								696
 							]
 						],
 						"settings":
@@ -335,25 +608,26 @@
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "app_blog/forms.py",
+					"buffer": 7,
+					"file": "templates/viewPost.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 295,
+						"buffer_size": 592,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								295,
-								295
+								562,
+								562
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Python/Python.tmLanguage"
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -362,54 +636,24 @@
 					"type": "text"
 				},
 				{
-					"buffer": 4,
-					"file": "app_blog/admin.py",
+					"buffer": 8,
+					"file": "templates/putComment.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 860,
+						"buffer_size": 270,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								411,
-								411
+								104,
+								104
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Python/Python.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "templates/index.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1185,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								172,
-								172
-							]
-						],
-						"settings":
-						{
-							"auto_name": "<",
 							"syntax": "Packages/HTML/HTML.tmLanguage"
 						},
 						"translation.x": 0.0,
@@ -419,12 +663,95 @@
 					"type": "text"
 				},
 				{
-					"buffer": 6,
-					"file": "media/2/styles.css",
+					"buffer": 9,
+					"file": "app_blog/forms.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 0,
+						"buffer_size": 302,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								242,
+								242
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "app_blog/admin.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1627,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								427,
+								427
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 195.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "app_blog/views.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2767,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1209,
+								1209
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 408.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "django/django/shortcuts/__init__.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5470,
 						"regions":
 						{
 						},
@@ -437,63 +764,152 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/CSS/CSS.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "templates/main.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1605,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								178,
-								178
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"tab_size": 2,
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 351.0,
+						"translation.y": 51.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 8,
-					"file": "media/1/mlpd3sign.css",
+					"buffer": 13,
+					"file": "django/django/template/loader.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3682,
+						"buffer_size": 7569,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1802,
-								1802
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/CSS/CSS.tmLanguage"
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 102.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 14,
+					"file": "django/django/template/base.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 49901,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 21981.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 15,
+					"file": "django/django/template/__init__.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3247,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 867.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 16,
+					"file": "django/django/contrib/auth/__init__.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5271,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1122.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 17,
+					"file": "templates/registration/login.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 64,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								14,
+								14
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -502,28 +918,115 @@
 					"type": "text"
 				},
 				{
-					"buffer": 9,
-					"file": "app_blog/views.py",
+					"buffer": 18,
+					"file": "templates/login.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1617,
+						"buffer_size": 61,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								675,
-								675
+								12,
+								12
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Python/Python.tmLanguage"
+							"syntax": "Packages/HTML/HTML.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 145.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 19,
+					"file": "django/django/contrib/auth/decorators.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3160,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1850,
+								1850
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 255.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 20,
+					"file": "django/django/contrib/auth/views.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 10960,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2402,
+								2402
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 459.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 21,
+					"file": "django/django/contrib/auth/forms.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 14774,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								7024,
+								7024
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 6477.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -603,7 +1106,7 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 150.0,
+	"side_bar_width": 278.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
