@@ -9,26 +9,32 @@ from django.template.defaulttags import autoescape
 from django.shortcuts import render
 from datetime import date 
 
+from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.views import logout, login
+
 today = date.today()
 
-def prepareContext(context=None):
+def prepareContext(request, context=None):
 	years = list(set([entry.date.year for entry in blogPost.objects.all()]))
-	context.update(years=years)
+	form = AuthenticationForm()
+	context.update(years=years, user=request.user, authForm=form)
 	return context
 
 def viewYearPosts(request, year = today.year):
 	posts = blogPost.objects.filter(date__year = year)
 	pageTemplate = loader.get_template("index.html")
-	pageContext = Context(prepareContext({'posts':posts, }),autoescape=False)
+	pageContext = Context(prepareContext(request,{'posts':posts, }),autoescape=False)
 	return HttpResponse(pageTemplate.render(pageContext)) 	
 
 def viewPost(request, post=0):
 	content = blogPost.objects.get(id=post)
 	comments = postComment.objects.filter(post=content)
 	pageTemplate = loader.get_template("viewPost.html")
-	pageContext = Context(prepareContext({'post': content, 'comments':comments }),autoescape=False)
+	pageContext = Context(prepareContext(request,{'post': content, 'comments':comments }),autoescape=False)
 	return HttpResponse(pageTemplate.render(pageContext))
 
+@login_required
 def putComment(request,post=0):
 	if request.method == "POST":
 		form = commentPost(request.POST)
@@ -43,6 +49,17 @@ def putComment(request,post=0):
 			return HttpResponseRedirect('/post/'+str(post)+'/')
 	else:
 		form = commentPost()
-	return render(request,"putComment.html",prepareContext({
+	return render(request,"putComment.html",prepareContext(request,{
 		'form':form, 'redirect':post,
 		}))
+
+def viewLogout(request):
+	logout(request,next_page='/')
+	return HttpResponseRedirect('/')
+
+def viewLogin(request):
+	return login(request,template_name="login.html",redirect_field_name='/')
+	#return HttpResponseRedirect('/')
+
+def registerAgree(request):
+	pass

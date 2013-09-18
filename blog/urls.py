@@ -16,6 +16,9 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
      url(r'^admin/', include(admin.site.urls)),
+     url(r'^logout/','app_blog.views.viewLogout'),
+     url(r'^login/','app_blog.views.viewLogin'),
+     url(r'^registerAgree/','app_blog.views.registerAgree'),
      url(r'^$','app_blog.views.viewYearPosts'),
      url(r'^tinymce/', include('tinymce.urls')),
      url(r'^ckeditor/',include('ckeditor.urls')),

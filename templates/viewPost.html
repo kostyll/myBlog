@@ -11,6 +11,11 @@
 				<p>{{ comment.date|date:"l, F jS" }}</p>
 			{% endfor %}
 		{% endif %}
-		<p><a href="/comment/{{ post.id }}/">Прокоментировать</a></p>
+		{% if user.is_authenticated %}
+			<p><a href="/comment/{{ post.id }}/">Прокоментировать</a></p>
+		{% else %}
+			Только зарегистрированные пользователи могут оставлять свои коментарии. 
+			<a href="/register/">Реестрация</a>
+		{% endif %}
 	{% endif %}
 {% endblock %}
