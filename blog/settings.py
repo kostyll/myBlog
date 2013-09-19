@@ -85,6 +85,12 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 #    'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
+#TEMPLATE_CONTEXT_PROCESSORS = (
+#    'django.core.context_processors.auth',
+#    'django.core.context_processors.media',
+#    'django.core.context_processors.request',
+#)
+
 
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = '5mwuv46gt#oviwzn83#ulz-4q_4bm==j9&amp;4jh)&amp;$xo$qsv(rjr'
@@ -98,7 +104,6 @@ TEMPLATE_LOADERS = (
 
 MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
- #   'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.middleware.locale.LocaleMiddleware',
@@ -137,7 +142,6 @@ INSTALLED_APPS = (
     'django_extensions',
     'ckeditor',
     'django.contrib.flatpages',
-#    'debug_toolbar',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -197,4 +201,10 @@ DEBUG_TOOLBAR_PANELS = (
     'debug_toolbar.panels.logger.LoggingPanel',
 )
 
-
+if DEBUG :
+   INSTALLED_APPS += (
+        'debug_toolbar',
+   ) 
+   MIDDLEWARE_CLASSES += (
+        'debug_toolbar.middleware.DebugToolbarMiddleware',
+    )

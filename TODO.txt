@@ -37,4 +37,5 @@ THE tasks in blog:
 6. Добавить возможность проведения платежей Privat24, LiqPay, Robokassa
 	- http://www.roboxchange.com/
 7. добавить регистрацию
-8. add django-tool-bar
+8. add django-tool-bar + 
+
