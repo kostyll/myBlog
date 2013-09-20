@@ -142,6 +142,7 @@ INSTALLED_APPS = (
     'django_extensions',
     'ckeditor',
     'django.contrib.flatpages',
+    'south',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -208,3 +209,7 @@ if DEBUG :
    MIDDLEWARE_CLASSES += (
         'debug_toolbar.middleware.DebugToolbarMiddleware',
     )
+
+#SOCIAL INTEGRATION
+FACEBOOK_APP_ID = '520991374646298'
+FACEBOOK_API_SECRET = '4387657222814e54a10cfac6ce0743dc'
