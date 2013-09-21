@@ -26,6 +26,38 @@
 			- git commit ...
 			- git push ....
 
+cat /etc/nginx/sites-available/Blog.conf 
+server {
+    listen 80;
+    server_name myhostname.com;
+    access_log /var/log/nginx/Blog.access.log;
+    error_log /var/log/nginx/Blog_project.error.log;
+
+    # https://docs.djangoproject.com/en/dev/howto/static-files/#serving-static-files-in-production
+    location /static/ { # STATIC_URL
+        alias /home/andrew/workspace/myBlog/static/; # STATIC_ROOT
+        expires 30d;
+    }
+
+    location /media/ { # MEDIA_URL
+        alias /home/andrew/workspace/myBlog/media/; # MEDIA_ROOT
+        expires 30d;
+    }
+    
+    location /templates/ { # TEMPLATES
+        alias /home/andrew/workspace/myBlog/templates/;
+	expires 30d;
+    }	
+
+
+    location / {
+        include fastcgi_params;
+        fastcgi_pass 127.0.0.1:8080;
+ 	fastcgi_split_path_info ^()(.*)$;
+    }
+}
+
+
 THE tasks in blog:
 0. Добавить авторизацию в блог + на выводе коментов ссылку на автора.+
 1. Make|DownLoad-Edit good design - template+
@@ -39,4 +71,10 @@ THE tasks in blog:
 7. добавить регистрацию
 8. add django-tool-bar + 
 9. !!! Отредактировать нормальный контент - выложить на хостинг - только после этого появится возможность устанавливать социальные сервисы...
+10. Возможность CAPTCHA при регистрации
+11. Добавить возможность скрытия поста от пользователей (user-visible )
+12. Добавить возможность поиска sphinx
+13. Довавить теги - фильтр по тегам
+14. Добавить категории
+
 

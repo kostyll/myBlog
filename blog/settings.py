@@ -142,7 +142,8 @@ INSTALLED_APPS = (
     'django_extensions',
     'ckeditor',
     'django.contrib.flatpages',
-    'south',
+    'captcha',
+    #'south', - in django 1.7 - is int nessesary - buildin func.
 )
 
 # A sample logging configuration. The only tangible logging
@@ -209,6 +210,8 @@ if DEBUG :
    MIDDLEWARE_CLASSES += (
         'debug_toolbar.middleware.DebugToolbarMiddleware',
     )
+
+   SOUTH_TESTS_MIGRATE = False
 
 #SOCIAL INTEGRATION
 FACEBOOK_APP_ID = '520991374646298'
