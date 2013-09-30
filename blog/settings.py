@@ -127,6 +127,7 @@ TEMPLATE_DIRS = (
 )
 
 INSTALLED_APPS = (
+    #'django_admin_bootstrapped',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -143,7 +144,8 @@ INSTALLED_APPS = (
     'ckeditor',
     'django.contrib.flatpages',
     'captcha',
-    #'south', - in django 1.7 - is int nessesary - buildin func.
+    #'south', - in django 1.7 - is'nt nessesary - buildin func.
+    'crispy_forms',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -216,3 +218,17 @@ if DEBUG :
 #SOCIAL INTEGRATION
 FACEBOOK_APP_ID = '520991374646298'
 FACEBOOK_API_SECRET = '4387657222814e54a10cfac6ce0743dc'
+
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'django.contrib.auth.context_processors.auth',
+    'django.core.context_processors.debug',
+    'django.core.context_processors.i18n',
+    'django.core.context_processors.media',
+    'django.core.context_processors.static',
+    'django.core.context_processors.tz',
+#    'django.core.context_processors.request',
+    'django.contrib.messages.context_processors.messages',
+    'blog.context_processors.processor_login_form',
+)
+
+CRISPY_TEMPLATE_PACK = 'uni_form'

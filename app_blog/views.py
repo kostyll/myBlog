@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 # Create your views here.
 
+from __future__ import unicode_literals
+
 from django.template import Context, loader
 from django.http import HttpResponse, HttpResponseRedirect
 from app_blog.models import blogPost, postComment
@@ -10,6 +12,7 @@ from django.shortcuts import render, render_to_response
 from datetime import date 
 
 from django.contrib.auth.forms import AuthenticationForm
+
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.views import logout, login
 
@@ -18,67 +21,75 @@ from django.template import RequestContext
 
 today = date.today()
 
-def prepareContext(request, context=None):
-	years = list(set([entry.date.year for entry in blogPost.objects.all()]))
-	form = AuthenticationForm()
-	context.update(years=years, user=request.user, authForm=form)
-	return context
+def prepareContext(context_instance = None, context_variable = None):
+    if context_variable is None:
+        return context_instance
+    if context_instance is None:
+        context_instance = dict(**context_variable)
+    else:
+        context_instance.update(**context_variable)
+    return context_instance
+
+def prepareTitle(context_instance, title):
+    return prepareContext(context_instance=context_instance, context_variable = {'title':title,})
 
 def viewYearPosts(request, year = today.year):
-	posts = blogPost.objects.filter(date__year = year)
-	pageTemplate = loader.get_template("index.html")
-	pageContext = prepareContext(request,{'posts':posts, })
-	return render_to_response("index.html",pageContext,
-		context_instance=RequestContext(request))
-	#return HttpResponse(pageTemplate.render(pageContext)) 	
+    posts = blogPost.objects.filter(date__year = year)
+    pageTemplate = loader.get_template("index.html")
+    pageContext = {'posts':posts, }
+    pageContext = prepareTitle(pageContext, 'Останні пости')
+    return render_to_response("index.html",pageContext,
+        context_instance=RequestContext(request))
 
 def viewPost(request, post=0):
-	content = blogPost.objects.get(id=post)
-	comments = postComment.objects.filter(post=content)
-	pageTemplate = loader.get_template("viewPost.html")
-	pageContext = Context(prepareContext(request,{'post': content, 'comments':comments }),autoescape=False)
-	return HttpResponse(pageTemplate.render(pageContext))
+    content = blogPost.objects.get(id=post)
+    comments = postComment.objects.filter(post=content)
+    pageTemplate = loader.get_template("viewPost.html")
+    pageContext = {'post': content, 'comments':comments, }
+    pageContext = prepareTitle(pageContext, content.title)
+    return render_to_response("viewPost.html", pageContext,
+        context_instance=RequestContext(request))
 
 @login_required
 def putComment(request,post=0):
-	if request.method == "POST":
-		form = commentPost(request.POST)
-		if form.is_valid():
-			comment = postComment(
-				author=request.user, 
-				post=blogPost.objects.get(id=post), 
-				comment=request.POST['comment'], 
-				date=today
-				)
-			comment.save()
-			return HttpResponseRedirect('/post/'+str(post)+'/')
-	else:
-		form = commentPost()
-	return render(request,"putComment.html",prepareContext(request,{
-		'form':form, 'redirect':post,
-		}))
+    if request.method == "POST":
+        form = commentPost(request.POST)
+        if form.is_valid():
+            comment = postComment(
+                author=request.user, 
+                post=blogPost.objects.get(id=post), 
+                comment=request.POST['comment'], 
+                date=today
+                )
+            comment.save()
+            return HttpResponseRedirect('/post/'+str(post)+'/')
+    else:
+        form = commentPost()
+        pageContext = {'form':form, 'redirect':post, }
+        pageContext = prepareTitle(pageContext, 'Відправити коментар')
+    return render(request,"putComment.html", pageContext)
 
 def viewLogout(request):
-	logout(request,next_page='/')
-	return HttpResponseRedirect('/')
+    logout(request,next_page='/')
+    return HttpResponseRedirect('/')
 
 def viewLogin(request):
-	username = password = ''
-	if request.POST :
-		form = AuthenticationForm(request,data=request.POST)
-		if form.is_valid():
-			auth_login(request,form.get_user())
-			return HttpResponseRedirect('/')
-		else:
-			form = AuthenticationForm(request)
-			context = {
-		        'form': form,
-		        redirect_field_name: redirect_to,
-		        'site': current_site,
-		        'site_name': current_site.name,
-		    }
-			return TemplateResponse(request, "login.html", RequestContext(context),
-		                           )
+    username = password = ''
+    if request.POST :
+        form = AuthenticationForm(request,data=request.POST)
+        if form.is_valid():
+            auth_login(request,form.get_user())
+            return HttpResponseRedirect('/')
+        else:
+            form = AuthenticationForm(request)
+            pageContext = {
+                'form': form,
+                redirect_field_name: redirect_to,
+                'site': current_site,
+                'site_name': current_site.name,
+            }
+            pageContext = prepareTitle(pageContext, 'Увійти')
+            return TemplateResponse(request, "login.html", RequestContext(pageContext),                                )
 
 def registerAgree(request):
-	pass
+    pass

@@ -75,7 +75,7 @@
 			"file": "TODO.txt",
 			"settings":
 			{
-				"buffer_size": 1825,
+				"buffer_size": 3030,
 				"line_ending": "Unix"
 			}
 		},
@@ -107,7 +107,7 @@
 			"file": "blog/settings.py",
 			"settings":
 			{
-				"buffer_size": 7257,
+				"buffer_size": 7482,
 				"line_ending": "Unix"
 			}
 		},
@@ -416,15 +416,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1825,
+						"buffer_size": 3030,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1823,
-								1823
+								2928,
+								2928
 							]
 						],
 						"settings":
@@ -432,7 +432,7 @@
 							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 204.0,
+						"translation.y": 978.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -516,7 +516,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 2856.0,
+						"translation.y": 2609.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -527,15 +527,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 7257,
+						"buffer_size": 7482,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								6954,
-								6954
+								827,
+								827
 							]
 						],
 						"settings":
@@ -545,7 +545,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 2703.0,
+						"translation.y": 446.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -737,8 +737,8 @@
 						"selection":
 						[
 							[
-								427,
-								427
+								408,
+								408
 							]
 						],
 						"settings":
@@ -748,7 +748,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 195.0,
+						"translation.y": 102.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -862,7 +862,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 21981.0,
+						"translation.y": 21819.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -891,7 +891,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 867.0,
+						"translation.y": 689.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -947,7 +947,7 @@
 							"syntax": "Packages/HTML/HTML.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 34.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1003,7 +1003,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 255.0,
+						"translation.y": 526.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1032,7 +1032,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 459.0,
+						"translation.y": 4743.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1061,7 +1061,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 6477.0,
+						"translation.y": 5176.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"

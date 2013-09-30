@@ -4,6 +4,6 @@
 	<form action="/comment/{{redirect}}/" method="POST">{% csrf_token %}
 	{{ form.as_table}}
 	<input type="hidden" value="{{redirect}}">
-	<input type="submit" value="Прокоментировать">
+	<button type="submit" value="Коментувати">Коментувати</button>
 	</form>
 {% endblock %}
