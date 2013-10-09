@@ -1,0 +1,23 @@
+{% extends "index.html" %}
+{% block content %}
+	{% if mealsList %}
+
+	<table>
+		<tr>
+			<td>П.І.Б.</td>
+			<td>Сніданок</td>
+			<td>Вечеря</td>
+		</tr>
+		{% for meal in mealsList %}
+
+			<tr>
+				<td>{{ meal.user.last_name }} {{ meal.user.first_name}}</td>
+				<td>{% if meal.breakfast %}+{% endif %}</td>
+				<td>{% if meal.supper %}+{% endif %}</td>
+			</tr>
+
+		{% endfor %}
+	</table>
+
+	{% endif %}
+{% endblock %}

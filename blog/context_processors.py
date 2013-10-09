@@ -4,6 +4,15 @@ from app_blog.models import blogPost
 from django.contrib.auth.forms import AuthenticationForm
 
 def processor_login_form(request):
+	if request.user.is_authenticated:
+		return {}
+	else:
+		form = AuthenticationForm()
+		return {'authForm':form,}
+
+def processor_user(request):
+	return {'user':request.user,}
+
+def processor_years(request):
 	years = list(set([entry.date.year for entry in blogPost.objects.all()]))
-	form = AuthenticationForm()
-	return {'years':years, 'user':request.user,'authForm':form}
+	return {'years':years,}

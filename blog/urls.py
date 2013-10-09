@@ -24,6 +24,7 @@ urlpatterns = patterns('',
      url(r'^ckeditor/',include('ckeditor.urls')),
      url(r'^post/(?P<post>\d{1,8})','app_blog.views.viewPost'),
      url(r'^posts/year/(?P<year>\d\d\d\d)', 'app_blog.views.viewYearPosts'),
-     url(r'^comment/(?P<post>\d{1,8})','app_blog.views.putComment')
+     url(r'^comment/(?P<post>\d{1,8})','app_blog.views.putComment'),
+     url(r'^requestMeals/','requestMeals.views.viewRequestsMeals'),
      )#+ static(settings.TINYMCE_JS_URL, document_root=settings.TINYMCE_JS_ROOT)
 

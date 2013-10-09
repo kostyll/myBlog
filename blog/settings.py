@@ -139,6 +139,7 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation:
      'django.contrib.admindocs',
     'app_blog',
+    'requestMeals',
     'tinymce',
     'django_extensions',
     'ckeditor',
@@ -229,6 +230,8 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 #    'django.core.context_processors.request',
     'django.contrib.messages.context_processors.messages',
     'blog.context_processors.processor_login_form',
+    'blog.context_processors.processor_user',
+    'blog.context_processors.processor_years',
 )
 
 CRISPY_TEMPLATE_PACK = 'uni_form'

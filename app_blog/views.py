@@ -9,7 +9,7 @@ from app_blog.models import blogPost, postComment
 from app_blog.forms import commentPost
 from django.template.defaulttags import autoescape
 from django.shortcuts import render, render_to_response
-from datetime import date 
+
 
 from django.contrib.auth.forms import AuthenticationForm
 
@@ -19,7 +19,8 @@ from django.contrib.auth.views import logout, login
 from django.contrib.auth import login as auth_login
 from django.template import RequestContext
 
-today = date.today()
+from blog.general_tools import today
+
 
 def prepareContext(context_instance = None, context_variable = None):
     if context_variable is None:
@@ -83,7 +84,7 @@ def viewLogin(request):
         else:
             form = AuthenticationForm(request)
             pageContext = {
-                'form': form,
+                 'form': form,
                 redirect_field_name: redirect_to,
                 'site': current_site,
                 'site_name': current_site.name,
