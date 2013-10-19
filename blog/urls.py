@@ -2,6 +2,7 @@ from django.conf.urls import patterns, include, url
 from django.conf.urls.static import static
 from django.conf import settings
 
+
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
 admin.autodiscover()
@@ -28,4 +29,8 @@ urlpatterns = patterns('',
      url(r'^comment/(?P<post>\d{1,8})','app_blog.views.putComment'),
      url(r'^requestMeals/','requestMeals.views.viewRequestsMeals'),
      )#+ static(settings.TINYMCE_JS_URL, document_root=settings.TINYMCE_JS_ROOT)
+
+if settings.DEBUG:
+    from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+    urlpatterns += staticfiles_urlpatterns() + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

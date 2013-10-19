@@ -1,0 +1,27 @@
+{% extends "index.html" %}
+{% block content %}
+	{% if post %}
+		<h1>{{ post.title }}</h1>
+		{% autoescape off %}
+		<p>{{ post.body }}</p>
+		{% endautoescape %}
+		<p>{{ post.date|date:"l, F jS" }}</p>
+		<div class="share42init"></div>
+		<script type="text/javascript" src="/media/share42/share42.js"></script>
+		{% if comments %}
+			{% for comment in comments %}
+				<hr>
+				<p>Написав {{comment.author.first_name}} : {{ comment.date|date:"l, F jS" }}</p>
+				{% autoescape off %}
+					<p>{{ comment.comment }}</p>
+				{% endautoescape %}
+			{% endfor %}
+		{% endif %}
+		{% if user.is_authenticated %}
+			<p><a href="/comment/{{ post.id }}/" class="btn btn-xs btn-primary" role="button">Прокоментувати</a></p>
+		{% else %}
+			Тільки зареєстровані користувачі можуть залишати коментарі. 
+			<a href="/register/" class="btn btn-xs btn-primary" role="button">Реєстрація</a>
+		{% endif %}
+	{% endif %}
+{% endblock %}

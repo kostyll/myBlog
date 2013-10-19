@@ -77,6 +77,7 @@ STATIC_URL = '/static/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
+                    '/home/andrew/workspace/myBlog/templates/',
                     STATIC_ROOT + 'js/tiny_mce/',
                     '/home/andrew/workspace/myBlog/static/js/tiny_mce/themes/simple',
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
