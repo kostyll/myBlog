@@ -16,7 +16,7 @@ from app_blog.models import blogPost, postComment
 class blogPostForm(ModelForm):
     class Meta:
         model = blogPost
-        fields = ('title','body','date','active', 'reviews',)
+        fields = ('title','body','date','active',)
         #widgets = {
         #           'body': TinyMCE(
         #                        attrs={'cols': 80, 'rows': 30},

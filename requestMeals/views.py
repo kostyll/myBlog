@@ -11,8 +11,8 @@ def viewRequestsMeals(request):
 	group = request.user.groups.all()[0]
 	print (group.name)
 	users = group.user_set.all()
-	meals = userMeals.objects.filter(date=today, user__in=users)
+	meals = userMeals.objects.filter(date=today, user__groups__in=users)
 	print (meals.count())
 
-	return render_to_response('requestsMeals.html',{'mealsList':meals},
+	return render_to_response('requestsMeals.html',{'mealsList':meals,},
         context_instance=RequestContext(request))
