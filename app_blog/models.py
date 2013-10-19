@@ -10,8 +10,14 @@ from ckeditor.fields import RichTextField
 
 class blogPost(models.Model):
     title = models.CharField(verbose_name=u"Заголовок", max_length=140)
-    body = models.TextField(verbose_name=u"Текст поста")
+    body = models.TextField(verbose_name=u"Текст посту")
     date = models.DateField(verbose_name=u"Дата")
+    active = models.BooleanField(verbose_name=u"Відкритий", default=False)
+    reviews = models.IntegerField(verbose_name=u'Кількість переглядів', default=0)
+
+    def add_one_review(self):
+    	self.reviews = self.reviews + 1
+    	self.save()
     
     class Meta:
         ordering = ('-date',)
@@ -21,10 +27,10 @@ class blogPost(models.Model):
 
 
 class postComment(models.Model):
-	author = models.ForeignKey(User, verbose_name=u"Автор комента")
+	author = models.ForeignKey(User, verbose_name=u"Автор")
 	post = models.ForeignKey(blogPost,verbose_name=u"Пост")
 	#comment = models.TextField(verbose_name=u"Коментарий")
-	comment = RichTextField(verbose_name=u"Коментарий")
+	comment = RichTextField(verbose_name=u"Коментар")
 	date = models.DateField(verbose_name=u"Дата")
 
 	class Meta:

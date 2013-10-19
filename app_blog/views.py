@@ -35,7 +35,7 @@ def prepareTitle(context_instance, title):
     return prepareContext(context_instance=context_instance, context_variable = {'title':title,})
 
 def viewYearPosts(request, year = today.year):
-    posts = blogPost.objects.filter(date__year = year)
+    posts = blogPost.objects.filter(date__year = year, active=True)
     pageTemplate = loader.get_template("index.html")
     pageContext = {'posts':posts, }
     pageContext = prepareTitle(pageContext, 'Останні пости')
@@ -44,6 +44,7 @@ def viewYearPosts(request, year = today.year):
 
 def viewPost(request, post=0):
     content = blogPost.objects.get(id=post)
+    content.add_one_review()
     comments = postComment.objects.filter(post=content)
     pageTemplate = loader.get_template("viewPost.html")
     pageContext = {'post': content, 'comments':comments, }
@@ -82,6 +83,7 @@ def viewLogin(request):
             auth_login(request,form.get_user())
             return HttpResponseRedirect('/')
         else:
+
             form = AuthenticationForm(request)
             pageContext = {
                  'form': form,
@@ -90,7 +92,11 @@ def viewLogin(request):
                 'site_name': current_site.name,
             }
             pageContext = prepareTitle(pageContext, 'Увійти')
-            return TemplateResponse(request, "login.html", RequestContext(pageContext),                                )
+            return TemplateResponse(request, "login.html", RequestContext(pageContext),)
+    else:
+        #!!!!!!!!!!!!!!!!!!!
+        return HttpResponseRedirect('/')
+        #!!!!!!!!!!!!!!!!!!!
 
 def registerAgree(request):
     pass

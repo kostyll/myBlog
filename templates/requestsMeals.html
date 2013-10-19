@@ -1,8 +1,8 @@
 {% extends "index.html" %}
 {% block content %}
 	{% if mealsList %}
-
-	<table>
+	<h3>Заявка зняття з продовольчого забезпечення</h3>
+	<table class="table table-striped table-bordered table-hover">
 		<tr>
 			<td>П.І.Б.</td>
 			<td>Сніданок</td>
@@ -12,12 +12,40 @@
 
 			<tr>
 				<td>{{ meal.user.last_name }} {{ meal.user.first_name}}</td>
-				<td>{% if meal.breakfast %}+{% endif %}</td>
-				<td>{% if meal.supper %}+{% endif %}</td>
+				<td{% if meal.breakfast %} class="success">Іде на сніданок{% else %}>{% endif %}</td>
+				<td{% if meal.supper %} class="success">Іде на вечерю{% else %}>{% endif %}</td>
 			</tr>
 
 		{% endfor %}
 	</table>
 
+	<br>
+	<h3>Заявки на завтра:</h3>
+	<div>
+		<div>
+			<h4>Сніданок</h4>
+				<a href="/requestMeals/putBreakfastTrue/" class="btn btn-info">Піду на сніданок завтра</a>
+				<a href="/requestMeals/putBreakfastFalse/" class="btn btn-warning">Не піду на сніданок завтра</a>
+		</div>
+		<div>
+			<h4>Вечеря</h4>
+				<a href="/requestMeals/putSupperTrue/" class="btn btn-info">Піду на вечерю завтра</a>
+				<a href="/requestMeals/putSupperFalse/" class="btn btn-warning">Не піду на вечерю завтра</a>
+		</div>
+	</div>
+	<br>
+	<h3>Налаштування по замовчуванню:</h3>
+	<div>
+		<div>
+			<h4>Сніданок</h4>
+				<a href="/requestMeals/putDefaultBreakfastTrue/" class="btn btn-info">Переважно ходжу на сніданок</a>
+				<a href="/requestMeals/putDefaultBreakfastFalse/" class="btn btn-warning">Переважно не ходжу на сніданок</a>
+		</div>
+		<div>
+			<h4>Вечеря</h4>
+				<a href="/requestMeals/putDefaultSupperTrue/" class="btn btn-info">Переважно ходжу на вечерю</a>
+				<a href="/requestMeals/putDefaultSupperFalse/" class="btn btn-warning">Переважно не ходжу на вечерю</a>
+		</div>
+	</div>
 	{% endif %}
 {% endblock %}

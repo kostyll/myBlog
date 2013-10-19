@@ -35,7 +35,7 @@ TIME_ZONE = 'Europe/Kiev'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ru'
 
 SITE_ID = 1
 
@@ -147,6 +147,7 @@ INSTALLED_APPS = (
     'captcha',
     #'south', - in django 1.7 - is'nt nessesary - buildin func.
     'crispy_forms',
+    'bootstrap_toolkit',
 )
 
 # A sample logging configuration. The only tangible logging

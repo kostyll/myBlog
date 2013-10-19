@@ -3,6 +3,7 @@
   <head>
   {% load staticfiles %}
   {% load crispy_forms_tags %}
+  {% load bootstrap_toolkit %}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
@@ -46,14 +47,14 @@
             <li class="active"><a href="/">Головна</a></li>
             <li><a href="/about/">Коротко про сайт</a></li>
             <li><a href="/contacts/">Контакти</a></li>
-            <li class="dropdown">
+            <!--<li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Сервіси<b class="caret"></b></a>
               <ul class="dropdown-menu">
                 {% if user.is_authenticated %}
                   <li><a href="/requestMeals/">Подати заявку на прийом їжі</a></li>
                 {% endif %}
               </ul>
-            </li>
+            </li> -->
 
           </ul>
         </div><!-- /.nav-collapse -->
@@ -91,6 +92,7 @@
                   <!-- {% autoescape off %}
                     <p>{{ post.body|truncatewords_html:"10" }} ... </p>
                   {% endautoescape %} -->
+                  <p>Кількість перглядів: {{ post.reviews }}</p>
                   <p><a href="/post/{{ post.id }}/" class="btn btn-xs btn-primary" role="button">Читати далі...</a></p>
                 </div>
               {% endfor %}  
@@ -99,40 +101,30 @@
         </div><!--/span-->
         
         <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
-           <div class="jumbotron">
-              Доброго дня,  
+           <div >
+              <h3>Доброго дня,  
               {% if user.is_authenticated %}
+              <br>
                 {{user.first_name}}
+              <br>
                 <a href="/logout/" class="btn btn-xs btn-primary" role="button">Вийти</a>
-             
               {% else %} 
-                гість
+                гість </h3>
                 {% if authForm %}
-                  <div class="input-small">
-                  <form action="/login/" method="POST">{% csrf_token %}
-                    {{ authForm }}
+                  <form action="/login/" method="POST" class="form-vertical">{% csrf_token %}
+                    {{ authForm|as_bootstrap }}
                     <div >
-                      <input type="submit" value="Увійти">
+                      <button type="submit" class="btn btn-xs btn-primary">Увійти</button>
                       <a href="/register/"  class="btn btn-xs btn-primary" role="button">Реестрація</a>
                     </div>
                   </form> 
-                  </div>
                 {% endif %}
 
               {% endif %}
            </div>
-
+          <br>
+          <center><b>Архів</b></center>
           <div class="list-group">
-<!--            <a href="#" class="list-group-item active">Link</a>
-            <a href="#" class="list-group-item">Link</a>
-            <a href="#" class="list-group-item">Link</a>
-            <a href="#" class="list-group-item">Link</a>
-            <a href="#" class="list-group-item">Link</a>
-            <a href="#" class="list-group-item">Link</a>
-            <a href="#" class="list-group-item">Link</a>
-            <a href="#" class="list-group-item">Link</a>
-            <a href="#" class="list-group-item">Link</a>
-            <a href="#" class="list-group-item">Link</a> -->
             {% if years %}
                 {% for year in years %}
                   <a href="/posts/year/{{year}}/" class="list-group-item">{{year}}</a>
