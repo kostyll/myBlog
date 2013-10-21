@@ -1,7 +1,9 @@
 # Django settings for blog project.
 
 import os
-if os.path.exists('dev.txt'):
+PROJECT_ROOT = os.path.dirname(os.path.realpath(__file__)).rpartition("/")[0]
+
+if os.path.exists(PROJECT_ROOT+'/dev.txt'):
     DEBUG = True
 else:
     DEBUG = False
@@ -12,7 +14,6 @@ ADMINS = (
     # ('Andrew', 'andrew.freelance@i.ua'),
 )
 
-PROJECT_ROOT = os.path.dirname(os.path.realpath(__file__)).rpartition("/")[0]
 
 MANAGERS = ADMINS
 
