@@ -58,7 +58,10 @@ USE_TZ = True
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/media/"
-MEDIA_ROOT = PROJECT_ROOT+'/media/'
+if DEBUG:
+    MEDIA_ROOT = PROJECT_ROOT+'/media/'
+else:
+    MEDIA_ROOT = '/home/kostylli/domains/kostyll.in.ua/public_html/media'
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
@@ -69,7 +72,10 @@ MEDIA_URL = '/media/'
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/home/media/media.lawrence.com/static/"
-STATIC_ROOT = PROJECT_ROOT+'/static/'
+if DEBUG:
+    STATIC_ROOT = PROJECT_ROOT+'/static/'
+else:
+    STATIC_ROOT = '/home/kostylli/domains/kostyll.in.ua/public_html/static/'
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
@@ -77,9 +83,9 @@ STATIC_URL = '/static/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
-                    '/home/andrew/workspace/myBlog/templates/',
+                    PROJECT_ROOT+'/templates/',
                     STATIC_ROOT + 'js/tiny_mce/',
-                    '/home/andrew/workspace/myBlog/static/js/tiny_mce/themes/simple',
+                    STATIC_ROOT +'/js/tiny_mce/themes/simple',
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
@@ -112,7 +118,7 @@ TEMPLATE_LOADERS = (
 MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware', 
     'django.middleware.locale.LocaleMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -151,7 +157,6 @@ INSTALLED_APPS = (
     'django_extensions',
     'ckeditor',
     'django.contrib.flatpages',
-    'captcha',
     #'south', - in django 1.7 - is'nt nessesary - buildin func.
     'crispy_forms',
     'bootstrap_toolkit',
@@ -216,6 +221,7 @@ DEBUG_TOOLBAR_PANELS = (
 
 if DEBUG :
    INSTALLED_APPS += (
+        'captcha',
         'debug_toolbar',
    ) 
    MIDDLEWARE_CLASSES += (
