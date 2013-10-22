@@ -10,6 +10,9 @@ from app_blog.forms import commentPost
 from django.template.defaulttags import autoescape
 from django.shortcuts import render, render_to_response
 
+from django import template
+
+register = template.Library()
 
 from django.contrib.auth.forms import AuthenticationForm
 

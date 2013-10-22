@@ -86,6 +86,7 @@ STATIC_URL = '/static/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
+                    PROJECT_ROOT+'/app_blog/static/',
                     PROJECT_ROOT+'/templates/',
                     STATIC_ROOT + 'js/tiny_mce/',
                     STATIC_ROOT +'/js/tiny_mce/themes/simple',
@@ -255,7 +256,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 
 CRISPY_TEMPLATE_PACK = 'uni_form'
 
-USER_REGISTRATION = False
+USER_REGISTRATION = True
 
 AUTHENTICATION_BACKENDS = (
     #'social_auth.backends.twitter.TwitterBackend',
@@ -337,3 +338,11 @@ SOCIAL_AUTH_PIPELINE = (
     'social_auth.backends.pipeline.user.update_user_details'
 )
 
+SOCIAL_AUTH_PROVIDERS = [
+    {'id': p[0], 'name': p[1], 'position': {'width': p[2][0], 'height': p[2][1], }}
+    for p in (
+        ('github', u'Ввійти через github', (0, -70)),
+        #('vk', u'Login via Facebook', (0, 0)),
+        #('google', u'Login via Twitter', (0, -35)),
+    )
+]
