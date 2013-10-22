@@ -227,7 +227,6 @@ DEBUG_TOOLBAR_PANELS = (
 
 if DEBUG :
    INSTALLED_APPS += (
-        'captcha',
         'debug_toolbar',
    ) 
    MIDDLEWARE_CLASSES += (
