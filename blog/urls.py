@@ -28,7 +28,8 @@ urlpatterns = patterns('',
      url(r'^posts/year/(?P<year>\d\d\d\d)', 'app_blog.views.viewYearPosts'),
      url(r'^comment/(?P<post>\d{1,8})','app_blog.views.putComment'),
      url(r'^requestMeals/','requestMeals.views.viewRequestsMeals'),
-     )#+ static(settings.TINYMCE_JS_URL, document_root=settings.TINYMCE_JS_ROOT)
+     url(r'', include('social_auth.urls')),
+     )
 
 if settings.DEBUG:
     from django.contrib.staticfiles.urls import staticfiles_urlpatterns
