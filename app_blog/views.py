@@ -19,7 +19,7 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.views import logout, login
 
-from django.contrib.auth import login as auth_login
+from django.contrib.auth import login as auth_login, authenticate
 from django.template import RequestContext
 
 from blog.general_tools import today
@@ -81,12 +81,13 @@ def viewLogout(request):
 def viewLogin(request):
     username = password = ''
     if request.POST :
-        form = AuthenticationForm(request,data=request.POST)
-        if form.is_valid():
-            auth_login(request,form.get_user())
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(username=username, password=password)
+        if user is not None:
+            auth_login(request,user)
             return HttpResponseRedirect('/')
         else:
-
             form = AuthenticationForm(request)
             pageContext = {
                  'form': form,
