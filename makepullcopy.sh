@@ -1,3 +1,3 @@
 #!/bin/bash
-git pull
-cp ./* /projects/blog/ -rf
+git pull;
+cp ./* /projects/blog/ -rf;
