@@ -1,4 +1,4 @@
-﻿# Django settings for blog project.
+# Django settings for blog project.
 
 from __future__ import unicode_literals
 
@@ -227,6 +227,7 @@ DEBUG_TOOLBAR_PANELS = (
 
 if DEBUG :
    INSTALLED_APPS += (
+    
         'debug_toolbar',
    ) 
    MIDDLEWARE_CLASSES += (
@@ -256,6 +257,10 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 CRISPY_TEMPLATE_PACK = 'uni_form'
 
 USER_REGISTRATION = True
+
+LOGIN_URL          = '/login-form/'
+LOGIN_REDIRECT_URL = '/logged-in/'
+LOGIN_ERROR_URL    = '/login-error/'
 
 AUTHENTICATION_BACKENDS = (
     #'social_auth.backends.twitter.TwitterBackend',
