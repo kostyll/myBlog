@@ -236,10 +236,7 @@ if DEBUG :
     )
 
    SOUTH_TESTS_MIGRATE = False
-
-#SOCIAL INTEGRATION
-FACEBOOK_APP_ID = '520991374646298'
-FACEBOOK_API_SECRET = '4387657222814e54a10cfac6ce0743dc'
+ 
 
 TEMPLATE_CONTEXT_PROCESSORS = (
     'django.contrib.auth.context_processors.auth',
@@ -289,8 +286,8 @@ AUTHENTICATION_BACKENDS = (
 
 TWITTER_CONSUMER_KEY         = ''
 TWITTER_CONSUMER_SECRET      = ''
-FACEBOOK_APP_ID              = ''
-FACEBOOK_API_SECRET          = ''
+FACEBOOK_APP_ID              = '520991374646298'
+FACEBOOK_API_SECRET          = '4387657222814e54a10cfac6ce0743dc'
 LINKEDIN_CONSUMER_KEY        = ''
 LINKEDIN_CONSUMER_SECRET     = ''
 ORKUT_CONSUMER_KEY           = ''
@@ -313,10 +310,6 @@ READABILITY_CONSUMER_SECRET  = ''
 READABILITY_CONSUMER_SECRET  = ''
 GITHUB_APP_ID                = '5e7ef7d6245f58102a98'
 GITHUB_APP_SECRET            = 'eaaf7b9884e56edc6485b26427536a31650d0765'
-
-LOGIN_URL          = '/login-form/'
-LOGIN_REDIRECT_URL = '/logged-in/'
-LOGIN_ERROR_URL    = '/login-error/'
 
 import random
 # Если имя не удалось получить, то можно его сгенерировать
@@ -347,7 +340,7 @@ SOCIAL_AUTH_PROVIDERS = [
     {'id': p[0], 'name': p[1], 'position': {'width': p[2][0], 'height': p[2][1], }}
     for p in (
         ('github', u'Ввійти через github', (0, -70)),
-        #('vk', u'Login via Facebook', (0, 0)),
+        ('facebook', u'Login via Facebook', (0, 0)),
         #('google', u'Login via Twitter', (0, -35)),
     )
 ]

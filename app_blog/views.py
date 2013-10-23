@@ -88,15 +88,7 @@ def viewLogin(request):
             auth_login(request,user)
             return HttpResponseRedirect('/')
         else:
-            form = AuthenticationForm(request)
-            pageContext = {
-                 'form': form,
-                redirect_field_name: redirect_to,
-                'site': current_site,
-                'site_name': current_site.name,
-            }
-            pageContext = prepareTitle(pageContext, 'Увійти')
-            return TemplateResponse(request, "login.html", RequestContext(pageContext),)
+            return HttpResponseRedirect('/')
     else:
         #!!!!!!!!!!!!!!!!!!!
         return HttpResponseRedirect('/')
