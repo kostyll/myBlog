@@ -285,7 +285,7 @@ SOCIAL_AUTH_ASSOCIATION_HANDLE_LENGTH = 16
 SOCIAL_AUTH_NONCE_SERVER_URL_LENGTH = 16
 SOCIAL_AUTH_ASSOCIATION_SERVER_URL_LENGTH = 16
 SOCIAL_AUTH_ASSOCIATION_HANDLE_LENGTH = 16
-SOCIAL_AUTH_ENABLED_BACKENDS = ('github',)
+SOCIAL_AUTH_ENABLED_BACKENDS = ('github','facebook',)
 
 TWITTER_CONSUMER_KEY         = ''
 TWITTER_CONSUMER_SECRET      = ''
@@ -312,7 +312,7 @@ YAHOO_CONSUMER_SECRET        = ''
 READABILITY_CONSUMER_SECRET  = ''
 READABILITY_CONSUMER_SECRET  = ''
 GITHUB_APP_ID                = '5e7ef7d6245f58102a98'
-GITHUB_APP_SECRET            = 'eaaf7b9884e56edc6485b26427536a31650d0765'
+GITHUB_API_SECRET            = 'eaaf7b9884e56edc6485b26427536a31650d0765'
 
 import random
 # Если имя не удалось получить, то можно его сгенерировать
@@ -345,7 +345,7 @@ SOCIAL_AUTH_PROVIDERS = [
     {'id': p[0], 'name': p[1], 'position': {'width': p[2][0], 'height': p[2][1], }}
     for p in (
         ('github', u'Ввійти через github', (0, -70)),
-        #('facebook', u'Login via Facebook', (0, 0)),
+        ('facebook', u'Login via Facebook', (0, 0)),
         #('google', u'Login via Twitter', (0, -35)),
     )
 ]
