@@ -103,11 +103,21 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 #    'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
+
 TEMPLATE_CONTEXT_PROCESSORS = (
+    'django.contrib.auth.context_processors.auth',
     'django.core.context_processors.auth',
     'django.core.context_processors.media',
     'django.core.context_processors.request',
-     'social_auth.context_processors.social_auth_by_name_backends',
+    'social_auth.context_processors.social_auth_by_name_backends',
+    'django.core.context_processors.debug',
+    'django.core.context_processors.i18n',
+    'django.core.context_processors.static',
+    'django.core.context_processors.tz',
+    'django.contrib.messages.context_processors.messages',
+    'blog.context_processors.processor_login_form',
+    'blog.context_processors.processor_user',
+    'blog.context_processors.processor_years',
 )
 
 
@@ -237,21 +247,6 @@ if DEBUG :
 
    SOUTH_TESTS_MIGRATE = False
  
-
-TEMPLATE_CONTEXT_PROCESSORS = (
-    'django.contrib.auth.context_processors.auth',
-    'django.core.context_processors.debug',
-    'django.core.context_processors.i18n',
-    'django.core.context_processors.media',
-    'django.core.context_processors.static',
-    'django.core.context_processors.tz',
-#    'django.core.context_processors.request',
-    'django.contrib.messages.context_processors.messages',
-    'blog.context_processors.processor_login_form',
-    'blog.context_processors.processor_user',
-    'blog.context_processors.processor_years',
-)
-
 CRISPY_TEMPLATE_PACK = 'uni_form'
 
 USER_REGISTRATION = True

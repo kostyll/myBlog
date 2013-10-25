@@ -29,7 +29,7 @@ urlpatterns = patterns('',
      url(r'^posts/year/(?P<year>\d\d\d\d)', 'app_blog.views.viewYearPosts'),
      url(r'^comment/(?P<post>\d{1,8})','app_blog.views.putComment'),
      url(r'^requestMeals/','requestMeals.views.viewRequestsMeals'),
-     url(r'', include('social_auth.urls')),
+     #url(r'', include('social_auth.urls')),
      )
 
 if settings.DEBUG:
