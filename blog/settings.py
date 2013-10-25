@@ -105,11 +105,11 @@ STATICFILES_FINDERS = (
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
+    'social_auth.context_processors.social_auth_by_name_backends',
     'django.contrib.auth.context_processors.auth',
 #    'django.core.context_processors.auth',
     'django.core.context_processors.media',
     'django.core.context_processors.request',
-    'social_auth.context_processors.social_auth_by_name_backends',
     'django.core.context_processors.debug',
     'django.core.context_processors.i18n',
     'django.core.context_processors.static',
@@ -251,8 +251,8 @@ CRISPY_TEMPLATE_PACK = 'uni_form'
 
 USER_REGISTRATION = True
 
-LOGIN_URL          = '/login-form/'
-LOGIN_REDIRECT_URL = '/logged-in/'
+LOGIN_URL          = 'login/'
+LOGIN_REDIRECT_URL = '/'
 LOGIN_ERROR_URL    = '/login-error/'
 
 AUTHENTICATION_BACKENDS = (
@@ -278,6 +278,14 @@ AUTHENTICATION_BACKENDS = (
     #'social_auth.backends.OpenIDBackend',
     'django.contrib.auth.backends.ModelBackend',
 )
+
+SOCIAL_AUTH_DEFAULT_USERNAME = 'nal_auth_user'
+SOCIAL_AUTH_UID_LENGTH = 16
+SOCIAL_AUTH_ASSOCIATION_HANDLE_LENGTH = 16
+SOCIAL_AUTH_NONCE_SERVER_URL_LENGTH = 16
+SOCIAL_AUTH_ASSOCIATION_SERVER_URL_LENGTH = 16
+SOCIAL_AUTH_ASSOCIATION_HANDLE_LENGTH = 16
+SOCIAL_AUTH_ENABLED_BACKENDS = ('github',)
 
 TWITTER_CONSUMER_KEY         = ''
 TWITTER_CONSUMER_SECRET      = ''
@@ -328,14 +336,16 @@ SOCIAL_AUTH_PIPELINE = (
     # Получает и обновляет social_user.extra_data
     'social_auth.backends.pipeline.social.load_extra_data',
     # Обновляет инстанс user дополнительными данными с бекенда
-    'social_auth.backends.pipeline.user.update_user_details'
+    'social_auth.backends.pipeline.user.update_user_details',
+
+    'social_auth.backends.pipeline.misc.save_status_to_session',
 )
 
 SOCIAL_AUTH_PROVIDERS = [
     {'id': p[0], 'name': p[1], 'position': {'width': p[2][0], 'height': p[2][1], }}
     for p in (
         ('github', u'Ввійти через github', (0, -70)),
-        ('facebook', u'Login via Facebook', (0, 0)),
+        #('facebook', u'Login via Facebook', (0, 0)),
         #('google', u'Login via Twitter', (0, -35)),
     )
 ]

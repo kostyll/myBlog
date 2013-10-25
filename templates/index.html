@@ -118,6 +118,8 @@
                       <button type="submit" class="btn btn-xs btn-primary">Увійти</button>
                       <a href="/register/"  class="btn btn-xs btn-primary" role="button">Реестрація</a>
                     </div>
+                    <a href="{% url 'socialauth_begin' 'github' %}">Login with GitHub</a>
+                    <hr>
                     {% social_auth_widget %}
                   </form> 
                 {% endif %}
