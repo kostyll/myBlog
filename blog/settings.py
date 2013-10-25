@@ -272,7 +272,7 @@ AUTHENTICATION_BACKENDS = (
     #'social_auth.backends.contrib.orkut.OrkutBackend',
     #'social_auth.backends.contrib.foursquare.FoursquareBackend',
     'social_auth.backends.contrib.github.GithubBackend',
-    #'social_auth.backends.contrib.vk.VKOAuth2Backend',
+    'social_auth.backends.contrib.vk.VKOAuth2Backend',
     #'social_auth.backends.contrib.live.LiveBackend',
     #'social_auth.backends.contrib.skyrock.SkyrockBackend',
     #'social_auth.backends.contrib.yahoo.YahooOAuthBackend',
@@ -304,8 +304,8 @@ GOOGLE_OAUTH2_CLIENT_ID      = ''
 GOOGLE_OAUTH2_CLIENT_SECRET  = ''
 FOURSQUARE_CONSUMER_KEY      = ''
 FOURSQUARE_CONSUMER_SECRET   = ''
-VK_APP_ID                    = ''
-VK_API_SECRET                = ''
+VK_APP_ID                    = '3954068'
+VK_API_SECRET                = 'ocf3cb0yOmrwZeV9UGkE'
 LIVE_CLIENT_ID               = ''
 LIVE_CLIENT_SECRET           = ''
 SKYROCK_CONSUMER_KEY         = ''
@@ -349,6 +349,8 @@ SOCIAL_AUTH_PROVIDERS = [
     for p in (
         ('github', u'Ввійти через github', (0, -70)),
         ('facebook', u'Login via Facebook', (0, 0)),
+        ('vk',u'vk', (0,0)),
+
         #('google', u'Login via Twitter', (0, -35)),
     )
 ]
