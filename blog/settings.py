@@ -349,7 +349,7 @@ SOCIAL_AUTH_PROVIDERS = [
     for p in (
         ('github', u'Ввійти через github', (0, -70)),
         ('facebook', u'Login via Facebook', (0, 0)),
-        ('vk',u'vk', (0,0)),
+        ('vk-openapi',u'vk', (0,0)),
 
         #('google', u'Login via Twitter', (0, -35)),
     )
