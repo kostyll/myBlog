@@ -262,7 +262,7 @@ AUTHENTICATION_BACKENDS = (
     #'social_auth.backends.twitter.TwitterBackend',
     'social_auth.backends.facebook.FacebookBackend',
     #'social_auth.backends.google.GoogleOAuthBackend',
-    #'social_auth.backends.google.GoogleOAuth2Backend',
+    'social_auth.backends.google.GoogleOAuth2Backend',
     #'social_auth.backends.google.GoogleBackend',
     #'social_auth.backends.yahoo.YahooBackend',
     #'social_auth.backends.browserid.BrowserIDBackend',
@@ -288,7 +288,7 @@ SOCIAL_AUTH_ASSOCIATION_HANDLE_LENGTH = 16
 SOCIAL_AUTH_NONCE_SERVER_URL_LENGTH = 16
 SOCIAL_AUTH_ASSOCIATION_SERVER_URL_LENGTH = 16
 SOCIAL_AUTH_ASSOCIATION_HANDLE_LENGTH = 16
-SOCIAL_AUTH_ENABLED_BACKENDS = ('FacebookBackend','GithubBackend','VKOAuth2Backend')
+SOCIAL_AUTH_ENABLED_BACKENDS = ('FacebookBackend','GithubBackend','VKOAuth2Backend','GoogleOAuth2Backend',)
 
 TWITTER_CONSUMER_KEY         = ''
 TWITTER_CONSUMER_SECRET      = ''
@@ -300,8 +300,8 @@ ORKUT_CONSUMER_KEY           = ''
 ORKUT_CONSUMER_SECRET        = ''
 GOOGLE_CONSUMER_KEY          = ''
 GOOGLE_CONSUMER_SECRET       = ''
-GOOGLE_OAUTH2_CLIENT_ID      = ''
-GOOGLE_OAUTH2_CLIENT_SECRET  = ''
+GOOGLE_OAUTH2_CLIENT_ID      = '36145141853-v3mfli3uest1uul4p83v4ahvfh0pqlhm.apps.googleusercontent.com'
+GOOGLE_OAUTH2_CLIENT_SECRET  = 'qC2WX6LxUf90pcMLjcSaYPx9'
 FOURSQUARE_CONSUMER_KEY      = ''
 FOURSQUARE_CONSUMER_SECRET   = ''
 VK_APP_ID                    = '3954068'
@@ -349,7 +349,8 @@ SOCIAL_AUTH_PROVIDERS = [
     for p in (
         ('github', u'Ввійти через github', (0, -70)),
         ('facebook', u'Login via Facebook', (0, 0)),
-        ('vk-openapi',u'vk', (0,0)),
+        ('vk-oauth',u'vk', (0,0)),
+        ('google-oauth2',u'google',(0,0)),
 
         #('google', u'Login via Twitter', (0, -35)),
     )
