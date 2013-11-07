@@ -118,7 +118,11 @@
                       <button type="submit" class="btn btn-xs btn-primary">Увійти</button>
                       <a href="/register/"  class="btn btn-xs btn-primary" role="button">Реестрація</a>
                     </div>
-                    {% social_auth_widget %}
+                      <!--//{//% social_auth_widget //%//} -->
+                      <a href="/social/login/github/"><img width=16 height=16 src="https://github.com/favicon.ico" alt="Увійти через github"></a>
+                      <a href="/social/login/facebook/"><iimg width=16 height=16 src="https://fbstatic-a.akamaihd.net/rsrc.php/v2/ym/r/qOAuy_fpEXc.png" alt="Увійти через facebook"></a>
+                      <a href="/social/login/vk-oauth/"><img width=16 height=16 src="http://vk.com/images/faviconnew.ico" alt="Увійти через vk"></a>
+                      <a href="/social/login/google-oauth2/"><img width=16 height=16 src="https://ssl.gstatic.com/s2/oz/images/faviconr3.ico" alt="Увійти через google"></a>
                   </form> 
                 {% endif %}
 
